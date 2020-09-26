@@ -23,6 +23,7 @@
         <a-assets>
           <video id="greenscreenvideo" src="yuvraj.mp4" loop ="true" autoplay = "true" muted ="true" >
         </a-assets>
+        <a-video src="#greenscreenvideo" width="16" height="9" position="0 0 -20"></a-video>
         <a-entity material="shader: chromakey; src: #greenscreenvideo; color: 1 1 1" geometry="primitive: box"></a-entity>
         
      
@@ -32,6 +33,7 @@
         console.log("HI");
         document.addEventListener("DOMContentLoaded", function(event) {
             var vid = document.getElementById("greenscreenvideo");
+            console.log(vid.position);
             vid.play();
         });
 
