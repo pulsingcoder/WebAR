@@ -9,13 +9,62 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://ghcdn.rawgit.org/chenzlabs/aframe-ar/8a7ee3b/dist/aframe-ar.min.js"></script>
     <script src="https://google-ar.github.io/three.ar.js/dist/three.ar.js"></script>
+    
+    <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
 </head>
 <body>
     <a-scene ar>
-      <a-box width="0.25" height="0.25" depth="0.25" position="-0.25 0.125 -0.75" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <!-- <a-box width="0.25" height="0.25" depth="0.25" position="-0.25 0.125 -0.75" rotation="0 45 0" color="#4CC3D9"></a-box>
       <a-sphere position="0 0.3125 -1.25" radius="0.3125" color="#EF2D5E"></a-sphere>
       <a-cylinder position="0.25 0.1875 -0.75" radius="0.125" height="0.375" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -1" rotation="-90 0 0" width="1" height="1" color="#7BC8A4" shadow></a-plane>
+      <a-plane position="0 0 -1" rotation="-90 0 0" width="1" height="1" color="#7BC8A4" shadow></a-plane> -->
+
+     
+        <a-assets>
+          <video id="greenscreenvideo" src="yuvraj.mp4" loop ="true" autoplay = "true" muted ="true" >
+        </a-assets>
+        <a-entity material="shader: chromakey; src: #greenscreenvideo; color: 1 1 1" geometry="primitive: box"></a-entity>
+        
+     
     </a-scene>
+
+    <script>
+        console.log("HI");
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var vid = document.getElementById("greenscreenvideo");
+            vid.play();
+        });
+
+    </script>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+    var scene = document.querySelector("a-scene");
+    var vid = document.getElementById("greenscreenvideo);
+    var videoShere = document.getElementById("videoShere");
+
+    if (scene.hasLoaded) {
+      run();
+    } else {
+      scene.addEventListener("loaded", run);
+    }
+
+    function run () {
+      if(AFRAME.utils.device.isMobile()) {
+        document.querySelector('#splash').style.display = 'flex';
+        document.querySelector('#splash').addEventListener('click', function () {
+          playVideo();
+          this.style.display = 'none';
+        })
+      } else {
+          playVideo();
+      }
+    }
+
+    function playVideo () {
+      vid.play();
+      videoShere.components.material.material.map.image.play();
+    }
+  })
+    </script> -->
   </body>
 </html>    
