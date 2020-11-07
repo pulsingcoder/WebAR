@@ -1,7 +1,7 @@
 # WebAR
 
 
-![alt text](https://github.com/pulsingcoder/WebAR/blob/master/Images/take0.jpeg)
+![alt text](https://github.com/pulsingcoder/WebAR/blob/master/Images/take1.png)
 
 After working with Unity AR transparent video, I decided to make same in web AR to allow user to use without any app to download
 
